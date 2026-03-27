@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      smartManagement: SmartManagement.onlyBuilder, // auto-dispose unused controllers
+      smartManagement: SmartManagement.onlyBuilder,
       title: 'AccuTrips',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(useMaterial3: true, colorScheme: ColorScheme.fromSeed(seedColor: Colors.lightBlue)),

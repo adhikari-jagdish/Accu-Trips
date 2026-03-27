@@ -1,3 +1,4 @@
+import 'package:accu_trips/modules/dashboard/dashboard_view.dart';
 import 'package:accu_trips/modules/splash/splash_view.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -12,6 +13,13 @@ final GoRouter router = GoRouter(
       name: 'splash',
       builder: (context, state) {
         return const SplashView();
+      },
+    ),
+    GoRoute(
+      path: '/dashboard',
+      name: 'dashboard',
+      builder: (context, state) {
+        return const DashboardView();
       },
     ),
   ],
