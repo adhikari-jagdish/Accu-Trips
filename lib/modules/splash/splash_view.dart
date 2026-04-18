@@ -1,5 +1,4 @@
 import 'package:accu_trips/app/constants/asset_paths.dart';
-import 'package:accu_trips/modules/dashboard/dashboard_view.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 

@@ -1,4 +1,5 @@
 import 'package:accu_trips/app/routes/app_routes.dart';
+import 'package:accu_trips/common/widgets/side_nav/side_nav_controller.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -6,6 +7,8 @@ import 'package:get/get.dart';
 void main() {
   // Global GetX config (recommended for production)
   Get.config(enableLog: kDebugMode);
+
+  Get.put(SideNavController());
   runApp(const MyApp());
 }
 
