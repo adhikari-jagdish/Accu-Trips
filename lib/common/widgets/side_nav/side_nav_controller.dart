@@ -3,6 +3,7 @@ import 'package:accu_trips/common/widgets/custom_alert_dialog.dart';
 import 'package:accu_trips/common/widgets/side_nav/side_nav_model.dart';
 import 'package:accu_trips/core/enum/side_nav_state_enum.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:go_router/go_router.dart';
 
@@ -31,7 +32,9 @@ class SideNavController extends GetxController {
     SideNavModel(iconPath: AssetsPaths.iconDashboard, title: 'Dashboard', route: '/dashboard'),
     SideNavModel(iconPath: AssetsPaths.iconQueries, title: 'Queries', route: '/queries'),
     SideNavModel(iconPath: AssetsPaths.iconAccounts, title: 'Accounts', route: '/accounts'),
-    SideNavModel(iconPath: AssetsPaths.iconSetting, title: 'Country', route: '/country'),
+    SideNavModel(iconPath: AssetsPaths.iconSetting, title: 'Countries', route: '/countries'),
+    SideNavModel(iconPath: AssetsPaths.iconSales, title: 'Cities', route: '/cities'),
+    SideNavModel(iconPath: AssetsPaths.iconTour, title: 'Hotels', route: '/hotels'),
     SideNavModel(iconPath: AssetsPaths.iconSetting, title: 'Setting', route: '/settings'),
     SideNavModel(iconPath: AssetsPaths.iconLogout, title: 'Logout', action: SideNavAction.logout),
   ];

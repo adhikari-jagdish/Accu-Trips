@@ -1,3 +1,4 @@
+import 'package:accu_trips/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -52,19 +53,19 @@ class CrudTable<T> extends StatelessWidget {
               horizontal: context.responsiveValue(mobile: 12.0, tablet: 16.0, desktop: 20.0),
               vertical: context.responsiveValue(mobile: 10.0, tablet: 14.0, desktop: 16.0),
             ),
-            child: Wrap(
+            child: Row(
               spacing: 12,
-              runSpacing: 10,
-              alignment: WrapAlignment.spaceBetween,
-              crossAxisAlignment: WrapCrossAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Text(
-                  title,
-                  style: TextStyle(
-                    fontSize: context.responsiveValue(mobile: 16.0, tablet: 18.0, desktop: 20.0),
-                    fontWeight: FontWeight.w700,
-                    color: const Color(0xFF113C7C),
-                    letterSpacing: -0.3,
+                Expanded(
+                  child: Text(
+                    title,
+                    style: TextStyle(
+                      fontSize: context.responsiveValue(mobile: 16.0, tablet: 18.0, desktop: 20.0),
+                      fontWeight: FontWeight.w700,
+                      color: AppColors.colorPrimaryDark,
+                      letterSpacing: -0.3,
+                    ),
                   ),
                 ),
                 Row(
@@ -92,7 +93,7 @@ class CrudTable<T> extends StatelessWidget {
                             ),
                             focusedBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(8),
-                              borderSide: const BorderSide(color: Color(0xFF113C7C), width: 1.5),
+                              borderSide: const BorderSide(color: AppColors.colorPrimaryDark, width: 1.5),
                             ),
                             filled: true,
                             fillColor: const Color(0xFFF9FAFB),
@@ -126,7 +127,7 @@ class CrudTable<T> extends StatelessWidget {
                         width: 36,
                         child: IconButton(
                           onPressed: onRefresh,
-                          icon: const Icon(Icons.refresh, size: 18, color: Color(0xFF113C7C)),
+                          icon: const Icon(Icons.refresh, size: 18, color: AppColors.colorPrimaryDark),
                           tooltip: 'Refresh',
                           style: IconButton.styleFrom(
                             backgroundColor: const Color(0xFFF0F4FA),
@@ -157,7 +158,7 @@ class CrudTable<T> extends StatelessWidget {
                         _buildTableHeader(context),
                         Expanded(
                           child: isLoading
-                              ? const Center(child: CircularProgressIndicator(color: Color(0xFF113C7C), strokeWidth: 2.5))
+                              ? const Center(child: CircularProgressIndicator(color: AppColors.colorPrimary, strokeWidth: 2.5))
                               : items.isEmpty
                               ? Center(
                                   child: Column(
@@ -188,7 +189,7 @@ class CrudTable<T> extends StatelessWidget {
 
   Widget _buildTableHeader(BuildContext context) {
     return Container(
-      color: const Color(0xFF113C7C),
+      color: AppColors.colorPrimary,
       padding: EdgeInsets.symmetric(vertical: 10, horizontal: context.responsiveValue(mobile: 10.0, tablet: 16.0, desktop: 20.0)),
       child: Row(
         children: List.generate(columns.length * 2 - 1, (index) {
@@ -230,12 +231,11 @@ class CrudRowCell extends StatelessWidget {
             text,
             textAlign: TextAlign.center,
             overflow: TextOverflow.ellipsis,
-            style: const TextStyle(fontSize: 12, color: Color(0xFF374151)),
+            style: const TextStyle(fontSize: 12, color: AppColors.colorPrimaryDark),
           ),
     );
   }
 }
-
 
 // Pagination
 
@@ -286,7 +286,7 @@ class _CrudPagination extends StatelessWidget {
           borderRadius: BorderRadius.circular(6),
           border: Border.all(color: const Color(0xFFE5E7EB)),
         ),
-        child: Icon(icon, size: 14, color: onTap != null ? const Color(0xFF374151) : const Color(0xFFD1D5DB)),
+        child: Icon(icon, size: 14, color: onTap != null ? AppColors.colorPrimary : const Color(0xFFD1D5DB)),
       ),
     );
   }
@@ -299,9 +299,9 @@ class _CrudPagination extends StatelessWidget {
         width: 28,
         height: 28,
         decoration: BoxDecoration(
-          color: isSelected ? const Color(0xFF113C7C) : Colors.transparent,
+          color: isSelected ? AppColors.colorPrimaryDark : Colors.transparent,
           borderRadius: BorderRadius.circular(6),
-          border: Border.all(color: isSelected ? const Color(0xFF113C7C) : const Color(0xFFE5E7EB)),
+          border: Border.all(color: isSelected ? AppColors.colorPrimary : const Color(0xFFE5E7EB)),
         ),
         child: Center(
           child: Text(

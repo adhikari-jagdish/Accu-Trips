@@ -1,5 +1,8 @@
+import 'package:accu_trips/common/widgets/crud_action_buttons.dart';
 import 'package:accu_trips/common/widgets/custom_dialog.dart';
 import 'package:accu_trips/common/widgets/custom_text_field.dart';
+import 'package:accu_trips/common/widgets/dialog_action_buttons.dart';
+import 'package:accu_trips/core/text_utils/app_text_extension.dart';
 import 'package:accu_trips/core/theme/app_colors.dart';
 import 'package:accu_trips/modules/city_and_country/controller/country_controller.dart';
 import 'package:flutter/material.dart';
@@ -20,17 +23,7 @@ class AddEditCountry extends StatelessWidget {
               width: double.infinity,
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
               decoration: BoxDecoration(color: AppColors.colorPrimary, borderRadius: BorderRadius.circular(10)),
-              child: const Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text('New Country', style: TextStyle(color: Colors.white, fontSize: 14)),
-                  SizedBox(height: 4),
-                  Text(
-                    'Country Manager',
-                    style: TextStyle(color: Colors.white, fontSize: 24, fontWeight: FontWeight.bold),
-                  ),
-                ],
-              ),
+              child: Text('New Country', style: context.typographyBold18().copyWith(color: Colors.white)),
             ),
             const SizedBox(height: 16),
             Row(
@@ -70,6 +63,8 @@ class AddEditCountry extends StatelessWidget {
                 ),
               ],
             ),
+            const SizedBox(height: 16),
+            DialogActionButtons(),
           ],
         ),
       ),

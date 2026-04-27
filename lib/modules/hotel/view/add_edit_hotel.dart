@@ -1,16 +1,18 @@
 import 'package:accu_trips/common/widgets/custom_dialog.dart';
+import 'package:accu_trips/common/widgets/custom_drop_down.dart';
 import 'package:accu_trips/common/widgets/custom_text_field.dart';
+import 'package:accu_trips/core/text_utils/app_text_extension.dart';
 import 'package:accu_trips/core/theme/app_colors.dart';
-import 'package:accu_trips/modules/city_and_country/controller/city_controller.dart';
+import 'package:accu_trips/modules/hotel/controller/hotel_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class AddEditCity extends StatelessWidget {
-  const AddEditCity({super.key});
+class AddEditHotel extends StatelessWidget {
+  const AddEditHotel({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final cityController = Get.find<CityController>();
+    final hotelController = Get.find<HotelController>();
     return CustomDialog(
       child: Form(
         child: Column(
@@ -20,39 +22,32 @@ class AddEditCity extends StatelessWidget {
               width: double.infinity,
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
               decoration: BoxDecoration(color: AppColors.colorPrimary, borderRadius: BorderRadius.circular(10)),
-              child: Text('New City', style: TextStyle(color: Colors.white, fontSize: 14)),
+              child: Text('New Hotel', style: context.typographyBold18().copyWith(color: Colors.white)),
             ),
             const SizedBox(height: 16),
             Row(
               children: [
                 Expanded(
-                  child: CustomTextField(
-                    title: 'City Code',
-                    hintText: 'Enter City Code',
-                    controller: cityController.cityCodeController,
-                    validator: (value) {
-                      if (value == null || value.trim().isEmpty) {
-                        return "Please enter city code";
-                      }
-                      if (value.trim().length < 2) {
-                        return "City code is too short";
-                      }
-                      return null;
-                    },
+                  child: CustomDropDown(
+                    title: 'Hotel Code',
+                    value: '5 Star',
+                    items: ['5 Star', '4 Star', '3 Star', '2 Star', 'Budget'],
+                    labelBuilder: (value) => value,
+                    onChanged: (value) => hotelController.selectedHotelCategory.value = value!,
                   ),
                 ),
 
                 Expanded(
                   child: CustomTextField(
-                    title: 'City Name',
-                    hintText: 'Enter City Name',
-                    controller: cityController.cityNameController,
+                    title: 'Hotel Name',
+                    hintText: 'Enter Hotel Name',
+                    controller: hotelController.hotelNameController,
                     validator: (value) {
                       if (value == null || value.trim().isEmpty) {
-                        return "Please enter city name";
+                        return "Please enter hotel name";
                       }
                       if (value.trim().length < 4) {
-                        return "City name is too short";
+                        return "Hotel name is too short";
                       }
                       return null;
                     },

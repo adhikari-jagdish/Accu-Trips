@@ -1,7 +1,9 @@
 import 'package:accu_trips/common/widgets/side_nav/custom_side_nav.dart';
 import 'package:accu_trips/modules/auth/view/login.dart';
+import 'package:accu_trips/modules/city_and_country/view/city_view.dart';
 import 'package:accu_trips/modules/city_and_country/view/country_view.dart';
 import 'package:accu_trips/modules/dashboard/dashboard_view.dart';
+import 'package:accu_trips/modules/hotel/view/hotel_view.dart';
 import 'package:accu_trips/modules/splash/splash_view.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -44,7 +46,9 @@ final GoRouter router = GoRouter(
       },
       routes: [
         GoRoute(path: '/dashboard', name: 'dashboard', builder: (context, state) => DashboardView()),
-        GoRoute(path: '/country', name: 'country', builder: (context, state) => CountryView()),
+        GoRoute(path: '/countries', name: 'countries', builder: (context, state) => CountryView()),
+        GoRoute(path: '/cities', name: 'cities', builder: (context, state) => CityView()),
+        GoRoute(path: '/hotels', name: 'hotels', builder: (context, state) => HotelView()),
       ],
     ),
   ],
