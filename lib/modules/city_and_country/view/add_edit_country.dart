@@ -16,6 +16,7 @@ class AddEditCountry extends StatelessWidget {
     final countryController = Get.find<CountryController>();
     return CustomDialog(
       child: Form(
+        key: countryController.formKey,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -64,7 +65,9 @@ class AddEditCountry extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 16),
-            DialogActionButtons(),
+            DialogActionButtons(
+              onSave: () => countryController.createCountry(context),
+            ),
           ],
         ),
       ),
