@@ -9,5 +9,5 @@ class SettingsController extends GetxController {
     super.onReady();
   }
 
-  final settingsGridList = [SettingsGridModel(icon: Icons.language, title: 'Language')];
+  //final settingsGridList = [SettingsGridModel(icon: Icons.language, title: 'Language')];
 }
