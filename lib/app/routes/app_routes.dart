@@ -4,6 +4,7 @@ import 'package:accu_trips/modules/city_and_country/view/city_view.dart';
 import 'package:accu_trips/modules/city_and_country/view/country_view.dart';
 import 'package:accu_trips/modules/dashboard/dashboard_view.dart';
 import 'package:accu_trips/modules/hotel/view/hotel_view.dart';
+import 'package:accu_trips/modules/settings/settings_view.dart';
 import 'package:accu_trips/modules/splash/splash_view.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -49,6 +50,7 @@ final GoRouter router = GoRouter(
         GoRoute(path: '/countries', name: 'countries', builder: (context, state) => CountryView()),
         GoRoute(path: '/cities', name: 'cities', builder: (context, state) => CityView()),
         GoRoute(path: '/hotels', name: 'hotels', builder: (context, state) => HotelView()),
+        GoRoute(path: '/settings', name: 'settings', builder: (context, state) => SettingsView()),
       ],
     ),
   ],

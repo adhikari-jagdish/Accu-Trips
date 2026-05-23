@@ -1,5 +1,6 @@
 import 'package:accu_trips/app/routes/app_routes.dart';
 import 'package:accu_trips/common/widgets/side_nav/side_nav_controller.dart';
+import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -19,6 +20,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      builder: BotToastInit(),
+      navigatorObservers: [BotToastNavigatorObserver()],
       smartManagement: SmartManagement.onlyBuilder,
       title: 'AccuTrips',
       debugShowCheckedModeBanner: false,

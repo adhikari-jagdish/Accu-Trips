@@ -26,8 +26,8 @@ class Header extends StatelessWidget implements PreferredSizeWidget {
           backgroundColor: AppColors.colorPrimaryDark,
           title: context.responsiveValue(
             mobile: SizedBox.shrink(),
-            desktop: Text('Welcome Back', style: context.typographyBold18().copyWith(color: Colors.white)),
-            tablet: Text('Welcome Back', style: context.typographyBold18().copyWith(color: Colors.white)),
+            desktop: Text(headerTitle ?? 'Welcome Back', style: context.typographyBold18().copyWith(color: Colors.white)),
+            tablet: Text(headerTitle ?? 'Welcome Back', style: context.typographyBold18().copyWith(color: Colors.white)),
           ),
           leading: context.responsiveValue(
             mobile: Builder(
